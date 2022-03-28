@@ -16,7 +16,7 @@ const questions = [
         message: "What do you want to do?",
         choices: [
             {
-                // Use chalk to style headers
+                
                 name: `Send an ${chalk.bold("email")}?`,
                 value: () => {
                     open("mailto:enr.delpriore@gmail.com");
@@ -43,22 +43,26 @@ const data = {
     labelGitHub: chalk.white.bold("            GitHub:"),
     labelCard: chalk.white.bold("            Card:"),
 };
+
+const NEWLINE = "\n";
+const EMPTYLINE = "";
+
 console.log(
     chalk.green(
         boxen(
             [
                 `${data.name} @${data.handle}`,
-                ``,
+                EMPTYLINE,
                 `${data.labelWork} ${data.work}`,
-                ``,
+                EMPTYLINE,
                 `${data.labelGitHub} ${data.github}`,
-                ``,
+                EMPTYLINE,
                 `${data.labelCard} ${data.npx}`,
-                ``,
+                EMPTYLINE,
                 `${chalk.white.italic('"If you want to find the secrets of the universe,')}`,
                 `${chalk.white.italic('think in terms of energy, frequency and vibration." ')}`,
                  `                                        `+`${chalk.red.bold("(N. Tesla)")}`
-            ].join("\n"),
+            ].join(NEWLINE),
             {
                 padding: 1,
                 margin: 1,
